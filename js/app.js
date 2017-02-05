@@ -29,8 +29,10 @@
     $scope.calcularNota = function () {
       var total = 0;
       for(var i = 0; i< $scope.notas.length; i++){
-        var nota = $scope.notas[i].nota;
-        var porcentaje =$scope.notas[i].porcentaje;
+        var nota = $scope.notas[i].nota.toString();
+        nota = nota.replace("," , ".");
+        var porcentaje =$scope.notas[i].porcentaje.toString();
+        porcentaje = porcentaje.replace("," , ".");
         if(nota >= 0 && porcentaje >= 0){
           nota = nota*porcentaje*0.01;
           total += nota;
