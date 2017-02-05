@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app ="MarksApp">
+<head>
+  <meta charset="utf-8">
+  <title>Prueba</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MarksController">
+  <div class="container">
+    <h1>Calcula tu nota</h1>
+    Escribe la nota del examen sobre 10, y el porcentaje de lo que vale dicho examen sobre 100
+    <div class = "form-inline" ng-repeat="x in notas">
+      Nota:<input type="text" class = "form-control" ng-model = "x.nota"/>
+      Porcentaje:<input type="text" class = "form-control" ng-model = "x.porcentaje"/>
+    </div>
+
+    <br>
+    <button type="button" class="btn btn-primary" ng-click="aumentarNotas();">Añadir</button>
+    <button type="button" class="btn btn-primary" ng-click="disminuirNotas();">Eliminar</button>
+    <h2>{{calcularNota();}}</h2>
+  </div>
+  <footer class="footer">
+      <div class="container" style="background-color=grey">
+        <p class="text-muted"><a href="https://pabloblancoo.com">Vuelve a la pagina principal</a></p>
+        <p class="text-muted">Mira el codigo en <a href="">github</a>.</p>
+        <p class="text-muted">Made with love by <a href="mailto:pabloblpa@hotmail.com">Pablo Blanco</a></p>
+      </div>
+    </footer>
+</body>
+</html>
